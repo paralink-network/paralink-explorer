@@ -1,4 +1,4 @@
-FROM phusion/baseimage:0.11
+FROM phusion/baseimage:latest
 
 RUN apt-get update && apt-get install wget -y
 
