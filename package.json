@@ -1,0 +1,23 @@
+{
+  "private": true,
+  "name": "paralink-explorer",
+  "description": "Paralink block explorer",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paralink-network/paralink-explorer.git"
+  },
+  "keywords": [
+    "blockchain",
+    "polkadot",
+    "substrate"
+  ],
+  "author": "Mario Pino Uceda",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/paralink-network/paralink-explorer/issues"
+  },
+  "homepage": "https://github.com/paralink-network/paralink-explorer#readme",
+  "workspaces": ["frontend", "backend"],
+  "scripts": {}
+ }
+ 
