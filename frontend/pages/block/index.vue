@@ -238,18 +238,13 @@ export default {
   },
   head() {
     return {
-      title: this.$t('pages.block.head_title', {
-        networkName: network.name,
-        blockNumber: this.$route.query.blockNumber,
-      }),
+      title: 'Explorer | Paralink Network',
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: this.$tc('pages.block.head_content', {
-            networkName: network.name,
-            blockNumber: this.$route.query.blockNumber,
-          }),
+          content:
+            'Paralink block explorer. Paralink is a multi-chain oracle platform for DeFi applications',
         },
       ],
     }

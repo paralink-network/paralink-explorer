@@ -25,9 +25,9 @@ $cyan: #17a2b8 !default;
 
 // theme colors
 $body-bg: #fff;
-$body-color: #000;
+$body-color: #596065;
 $primary: #fff;
-$primary2: #e6007a;
+$primary2: #2885d0;
 $secondary: $gray-600;
 $success: #068642;
 $info: $cyan !default;
@@ -88,15 +88,15 @@ $h1-font-size: 2.1rem !default;
 
 // global styles
 @font-face {
-  font-family: 'Visuelt';
-  src: url('../../fonts/Visuelt/Visuelt.ttf') format('truetype');
+  font-family: 'Poppins';
+  src: url('../../fonts/Poppins/Poppins-Regular.ttf') format('truetype');
 }
 html {
   position: relative;
   min-height: 100%;
 }
 body {
-  font-family: 'Space Mono', monospace;
+  font-family: 'Poppins', sans-serif;
   margin-bottom: 60px;
   font-size: 0.9rem;
 }
@@ -178,7 +178,7 @@ pre {
 // loading component
 .loading {
   margin-top: calc(30vh);
-  font-family: 'Visuelt', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 2rem;
 }
 

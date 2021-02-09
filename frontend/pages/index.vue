@@ -84,12 +84,13 @@ export default {
   },
   head() {
     return {
-      title: 'title',
+      title: 'Explorer | Paralink Network',
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: 'description',
+          content:
+            'Paralink block explorer. Paralink is a multi-chain oracle platform for DeFi applications',
         },
       ],
     }
