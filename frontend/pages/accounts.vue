@@ -219,7 +219,7 @@
 import JsonCSV from 'vue-json-csv'
 import Identicon from '@/components/Identicon.vue'
 import commonMixin from '@/mixins/commonMixin.js'
-import { paginationOptions, network } from '@/paralink.config.js'
+import { paginationOptions, network } from '@/frontend.config.js'
 
 export default {
   components: {
