@@ -55,9 +55,9 @@ $theme-colors: map-merge(
 
 // bootstrap variable overrides
 $link-color: $primary2 !default;
-$border-radius: 0 !default;
-$border-radius-lg: 0 !default;
-$border-radius-sm: 0 !default;
+$border-radius: 0.4rem !default;
+$border-radius-lg: 0.4rem !default;
+$border-radius-sm: 0.4rem !default;
 $pagination-color: $secondary !default;
 $pagination-bg: $white !default;
 $pagination-border-color: $secondary !default;
@@ -99,16 +99,10 @@ body {
   font-family: 'Poppins', sans-serif;
   margin-bottom: 60px;
   font-size: 0.9rem;
-}
-body::-webkit-scrollbar {
-  width: 10px;
-}
-body::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-}
-body::-webkit-scrollbar-thumb {
-  background-color: $primary2;
-  outline: none;
+  background-image: url(/img/bg-website.jpg);
+  background-position: 50% 50%;
+  background-size: cover;
+  background-attachment: fixed;
 }
 .logo {
   height: 24px;
@@ -143,140 +137,8 @@ pre {
 .nav-tabs .nav-item a {
   color: $light;
 }
-.text-selected {
-  color: $primary2;
-}
-.btn-selected {
-  color: $primary2 !important;
-  border-color: $primary2;
-}
-.selected-validators .dropdown-menu {
-  width: 400px;
-  padding: 1rem;
-  color: gray;
-}
-.selected-validators .dropdown-menu a span {
-  color: gray;
-}
-@media (max-width: 576px) {
-  .selected-validators .dropdown-menu {
-    width: 350px;
-  }
-}
-
-// additional component
-.additional-info p {
-  color: $light;
-}
-
-// identicon component
-.identicon {
-  cursor: pointer;
-  display: inline-block;
-}
-
-// loading component
-.loading {
-  margin-top: calc(30vh);
-  font-family: 'Poppins', sans-serif;
-  font-size: 2rem;
-}
-
-// ranking component
-.elected-icon {
-  color: $white;
-  font-size: 1.6rem;
-  border: 2px solid rgb(128 128 128 / 49%);
-  border-radius: 50%;
-}
-.not-elected-icon {
-  color: $white;
-  font-size: 1.6rem;
-  border: 2px solid rgb(128 128 128 / 49%);
-  border-radius: 50%;
-}
-.custom-switch.b-custom-control-lg .custom-control-label,
-.input-group-lg .custom-switch .custom-control-label {
-  font-size: 0.9rem;
-}
-.exclude {
-  padding: 1rem 1rem 0.5rem 1rem;
-  border: 1px solid $primary2;
-}
-.exclude-title {
-  font-size: 0.9rem;
-  color: $gray-600;
-  margin-bottom: 0;
-}
-.select {
-  cursor: pointer;
-}
-.ranking .select .selected,
-.ranking .select .unselected {
-  font-size: 1.2rem;
-}
-.selected-per-page {
-  color: $primary2;
-}
-
-// rating component
-.rating {
-  font-size: 1rem;
-}
-
-// selectedValidators component
-.addresses {
-  cursor: pointer;
-}
-.remove,
-.remove:hover,
-.remove:active {
-  color: rgba(255, 0, 0, 0.5);
-}
-.selected-validators .selected-validator {
-  font-size: 0.8rem;
-}
-
-// verifiedIcon component
-.verified .circle {
-  color: #0fccd6;
-}
-.verified .fa-check {
-  color: white;
-}
-
-// metrics page
-.metrics-page p {
-  color: $gray-600;
-}
-
-// nominate page
-.controller-address-validation p {
-  font-size: 0.75rem;
-}
-
-// validator page
-.metric {
-  border: 1px solid $primary2;
-  padding: 1rem;
-}
-.validator-page .metric {
-  min-height: 10rem;
-}
-.validator-page .card-body {
-  position: relative;
-}
-.validator-page .verified {
-  font-size: 2rem;
-  cursor: pointer;
-}
-.metric .description {
-  color: $gray-600;
-}
-.csv-export {
-  cursor: pointer;
-}
-
-.header-container {
-  background-color: $dark;
+.nav-item {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 14px;
 }

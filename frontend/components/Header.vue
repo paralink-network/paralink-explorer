@@ -1,5 +1,5 @@
 <template>
-  <b-navbar type="dark" variant="dark" toggleable="xl" sticky>
+  <b-navbar toggleable="xl" sticky>
     <b-container class="px-sm-3">
       <b-navbar-brand>
         <nuxt-link to="/" class="navbar-brand" title="Paralink block explorer">
