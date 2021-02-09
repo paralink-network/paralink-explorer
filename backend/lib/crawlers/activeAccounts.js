@@ -156,7 +156,7 @@ const start = async (wsProviderUrl, pool, config) => {
   const pollingTime = config.pollingTime || DEFAULT_POLLING_TIME_MS;
 
   await wait(config.startDelay);
-  logger.info(loggerOptions, 'Starting block harvester...');
+  logger.info(loggerOptions, 'Starting active accounts crawler...');
   const wsProvider = new WsProvider(wsProviderUrl);
   const api = await ApiPromise.create({ provider: wsProvider, types });
 
