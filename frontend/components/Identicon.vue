@@ -1,7 +1,7 @@
 <template>
   <div
     v-b-tooltip.hover
-    title="Click to copy validator address to clipboard"
+    title="Click to copy address to clipboard"
     class="d-inline"
     @click="showToast"
   >
