@@ -219,7 +219,6 @@ import gql from 'graphql-tag'
 import Identicon from '@/components/Identicon.vue'
 import Loading from '@/components/Loading.vue'
 import commonMixin from '@/mixins/commonMixin.js'
-import { network } from '@/frontend.config.js'
 
 export default {
   components: {
