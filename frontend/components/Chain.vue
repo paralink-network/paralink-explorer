@@ -1,8 +1,6 @@
 <template>
   <div v-if="lastBlock">
     <div class="row">
-      <div class="col-6 col-md-6 col-lg-3 mb-4"></div>
-      <div class="col-6 col-md-6 col-lg-3 mb-4"></div>
       <div class="col-6 col-md-6 col-lg-3 mb-4">
         <div class="card h-100">
           <div class="card-body">
@@ -37,6 +35,36 @@
           </div>
         </div>
       </div>
+      <div class="col-6 col-md-6 col-lg-3 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h4 class="mb-3">Extrinsics</h4>
+            <nuxt-link
+              v-b-tooltip.hover
+              to="/extrinsics"
+              title="Click to see extrinsics!"
+            >
+              <h6 class="d-inline-block">
+                {{ formatNumber(totalExtrinsics) }}
+              </h6>
+            </nuxt-link>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-md-6 col-lg-3 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h4 class="mb-3">Events</h4>
+            <nuxt-link
+              v-b-tooltip.hover
+              to="/events"
+              title="Click to see events!"
+            >
+              <h6 class="d-inline-block">{{ formatNumber(totalEvents) }}</h6>
+            </nuxt-link>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -53,6 +81,8 @@ export default {
       network,
       lastBlock: 0,
       lastFinalizedBlock: 0,
+      totalExtrinsics: 0,
+      totalEvents: 0,
     }
   },
   apollo: {
@@ -84,6 +114,24 @@ export default {
         `,
         result({ data }) {
           this.lastFinalizedBlock = data.block[0].block_number
+        },
+      },
+      total: {
+        query: gql`
+          subscription total {
+            total {
+              name
+              count
+            }
+          }
+        `,
+        result({ data }) {
+          this.totalExtrinsics =
+            data.total.find((row) => row.name === 'extrinsics').count || 0
+          this.totalTransfers =
+            data.total.find((row) => row.name === 'transfers').count || 0
+          this.totalEvents =
+            data.total.find((row) => row.name === 'events').count || 0
         },
       },
     },
