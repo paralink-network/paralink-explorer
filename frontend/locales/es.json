@@ -30,6 +30,9 @@
       "waiting_validators": "En cola",
       "nominators": "Nominadores",
       "progress": "Progreso"
+    },
+    "loading": {
+      "loading_data": "Cargando datos, por favor sea paciente..."
     }
   },
   "layout": {
