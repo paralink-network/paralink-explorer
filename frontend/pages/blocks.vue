@@ -76,7 +76,7 @@
 import gql from 'graphql-tag'
 import commonMixin from '@/mixins/commonMixin.js'
 import Loading from '@/components/Loading.vue'
-import { network, paginationOptions } from '@/frontend.config.js'
+import { paginationOptions } from '@/frontend.config.js'
 
 export default {
   components: {
@@ -108,6 +108,16 @@ export default {
         {
           key: 'block_hash',
           label: 'Hash',
+          sortable: true,
+        },
+        {
+          key: 'total_extrinsics',
+          label: 'Extrinsics',
+          sortable: true,
+        },
+        {
+          key: 'total_events',
+          label: 'Events',
           sortable: true,
         },
       ],
@@ -150,6 +160,8 @@ export default {
               block_number
               finalized
               block_hash
+              total_extrinsics
+              total_events
             }
           }
         `,
