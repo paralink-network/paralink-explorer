@@ -240,3 +240,73 @@ pre {
   background-color: #35424e;
 }
 
+// home page
+.dashboard .clipboard {
+  display: inline-block;
+}
+.dashboard .identicon {
+  margin-right: 0.2rem;
+  cursor: copy;
+}
+
+// blocks page
+.last-blocks .identicon {
+  display: inline-block;
+  margin: 0 0.2rem 0 0;
+  cursor: copy;
+}
+
+// accounts page
+#accounts-table th {
+  text-align: center;
+}
+.page-accounts .identicon {
+  display: inline-block;
+}
+.page-accounts td div {
+  padding: 0 !important;
+}
+.btn-group {
+  margin-bottom: 1rem;
+  display: inline-flex;
+}
+.btn-secondary {
+  font-size: 0.8rem;
+}
+.download-csv {
+  cursor: pointer;
+  text-align: right;
+}
+
+// block page
+.block-table tr td:first-child {
+  width: 30%;
+  font-weight: bold;
+}
+.block-table tr td:nth-child(2) {
+  width: 70%;
+}
+.block-table tr td .identicon {
+  display: inline-block;
+}
+.block-page .amount {
+  color: $primary2;
+  font-weight: 700;
+}
+.block-page .clipboard {
+  display: inline-block;
+}
+
+// account page
+.account-page .table tr td .identicon {
+  display: inline-block;
+}
+.account-page .amount {
+  color: $primary2;
+  font-weight: 700;
+}
+.account-page .fiat {
+  color: $primary2;
+  font-size: 1rem;
+  font-weight: 200;
+}

@@ -380,26 +380,3 @@ export default {
   },
 }
 </script>
-<style>
-#accounts-table th {
-  text-align: center;
-}
-.page-accounts .identicon {
-  display: inline-block;
-}
-
-.page-accounts td div {
-  padding: 0 !important;
-}
-.btn-group {
-  margin-bottom: 1rem;
-  display: inline-flex;
-}
-.btn-secondary {
-  font-size: 0.8rem;
-}
-.download-csv {
-  cursor: pointer;
-  text-align: right;
-}
-</style>

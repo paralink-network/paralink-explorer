@@ -346,25 +346,3 @@ export default {
   },
 }
 </script>
-<style>
-.identicon {
-  cursor: pointer;
-}
-.block-table tr td:first-child {
-  width: 30%;
-  font-weight: bold;
-}
-.block-table tr td:nth-child(2) {
-  width: 70%;
-}
-.block-table tr td .identicon {
-  display: inline-block;
-}
-.block-page .amount {
-  color: #ef1073;
-  font-weight: 700;
-}
-.block-page .clipboard {
-  display: inline-block;
-}
-</style>

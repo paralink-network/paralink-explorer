@@ -186,11 +186,3 @@ export default {
   },
 }
 </script>
-
-<style>
-.last-blocks .identicon {
-  display: inline-block;
-  margin: 0 0.2rem 0 0;
-  cursor: copy;
-}
-</style>

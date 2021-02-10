@@ -326,20 +326,3 @@ export default {
   },
 }
 </script>
-<style>
-.identicon {
-  cursor: pointer;
-}
-.account-page .table tr td .identicon {
-  display: inline-block;
-}
-.account-page .amount {
-  color: #ef1073;
-  font-weight: 700;
-}
-.account-page .fiat {
-  color: #ef1073;
-  font-size: 1rem;
-  font-weight: 200;
-}
-</style>

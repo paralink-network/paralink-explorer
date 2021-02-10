@@ -97,12 +97,3 @@ export default {
   },
 }
 </script>
-<style>
-.dashboard .clipboard {
-  display: inline-block;
-}
-.dashboard .identicon {
-  margin-right: 0.2rem;
-  cursor: copy;
-}
-</style>
