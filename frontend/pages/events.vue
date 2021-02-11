@@ -6,55 +6,60 @@
           {{ $t('pages.events.title') }}
         </h1>
         <div class="last-events">
-          <!-- Filter -->
-          <b-row style="margin-bottom: 1rem">
-            <b-col cols="12">
-              <b-form-input
-                id="filterInput"
-                v-model="filter"
-                type="search"
-                :placeholder="$t('pages.events.search_placeholder')"
-              />
-            </b-col>
-          </b-row>
-          <div class="table-responsive">
-            <b-table striped hover :fields="fields" :items="events">
-              <template #cell(block_number)="data">
-                <p class="mb-0">
-                  <nuxt-link
-                    v-b-tooltip.hover
-                    :to="`/block?blockNumber=${data.item.block_number}`"
-                    title="Check block information"
-                  >
-                    #{{ formatNumber(data.item.block_number) }}
-                  </nuxt-link>
-                </p>
-              </template>
-              <template #cell(section)="data">
-                <p class="mb-0">
-                  {{ data.item.section }} ➡
-                  {{ data.item.method }}
-                </p>
-              </template>
-            </b-table>
-            <div class="mt-2" style="display: flex">
-              <b-pagination
-                v-model="page"
-                :total-rows="totalRows"
-                :per-page="perPage"
-                aria-controls="validators-table"
-              />
-              <b-button-group class="mx-4">
-                <b-button
-                  v-for="(item, index) in tableOptions"
-                  :key="index"
-                  @click="handleNumFields(item)"
-                >
-                  {{ item }}
-                </b-button>
-              </b-button-group>
-            </div>
+          <div v-if="loading" class="text-center py-4">
+            <Loading />
           </div>
+          <template v-else>
+            <!-- Filter -->
+            <b-row style="margin-bottom: 1rem">
+              <b-col cols="12">
+                <b-form-input
+                  id="filterInput"
+                  v-model="filter"
+                  type="search"
+                  :placeholder="$t('pages.events.search_placeholder')"
+                />
+              </b-col>
+            </b-row>
+            <div class="table-responsive">
+              <b-table striped hover :fields="fields" :items="events">
+                <template #cell(block_number)="data">
+                  <p class="mb-0">
+                    <nuxt-link
+                      v-b-tooltip.hover
+                      :to="`/block?blockNumber=${data.item.block_number}`"
+                      title="Check block information"
+                    >
+                      #{{ formatNumber(data.item.block_number) }}
+                    </nuxt-link>
+                  </p>
+                </template>
+                <template #cell(section)="data">
+                  <p class="mb-0">
+                    {{ data.item.section }} ➡
+                    {{ data.item.method }}
+                  </p>
+                </template>
+              </b-table>
+              <div class="mt-2" style="display: flex">
+                <b-pagination
+                  v-model="page"
+                  :total-rows="totalRows"
+                  :per-page="perPage"
+                  aria-controls="validators-table"
+                />
+                <b-button-group class="mx-4">
+                  <b-button
+                    v-for="(item, index) in tableOptions"
+                    :key="index"
+                    @click="handleNumFields(item)"
+                  >
+                    {{ item }}
+                  </b-button>
+                </b-button-group>
+              </div>
+            </div>
+          </template>
         </div>
       </b-container>
     </section>
@@ -64,12 +69,17 @@
 <script>
 import gql from 'graphql-tag'
 import commonMixin from '@/mixins/commonMixin.js'
-import { network, paginationOptions } from '@/frontend.config.js'
+import Loading from '@/components/Loading.vue'
+import { paginationOptions } from '@/frontend.config.js'
 
 export default {
+  components: {
+    Loading,
+  },
   mixins: [commonMixin],
   data() {
     return {
+      loading: true,
       filter: '',
       events: [],
       tableOptions: paginationOptions,
@@ -157,6 +167,7 @@ export default {
           if (this.filter) {
             this.totalRows = this.events.length
           }
+          this.loading = false
         },
       },
       totalEvents: {
