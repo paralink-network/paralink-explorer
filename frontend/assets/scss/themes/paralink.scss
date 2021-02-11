@@ -292,6 +292,14 @@ pre {
   cursor: pointer;
   text-align: right;
 }
+@media (max-width: 767.98px) {
+  .page-accounts .table.b-table.b-table-stacked-md > tbody > tr > [data-label]::before {
+    display: none;
+  }
+  .page-accounts  .table.b-table.b-table-stacked-md > tbody > tr > [data-label] > div {
+    width: 100%;
+  }
+}
 
 // block page
 .block-table tr td:first-child {
