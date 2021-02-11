@@ -75,16 +75,16 @@
                     <tr>
                       <td>Success</td>
                       <td class="text-right">
-                        <i
+                        <font-awesome-icon
+                          icon="check-circle"
                           v-if="parsedExtrinsic.success"
-                          class="fa fa-check-circle text-success"
-                          aria-hidden="true"
-                        ></i>
-                        <i
+                          class="text-success"
+                        />
+                        <font-awesome-icon
                           v-else
-                          class="fa fa-check-circle text-danger"
-                          aria-hidden="true"
-                        ></i>
+                          icon="check-circle"
+                          class="text-danger"
+                        />
                       </td>
                     </tr>
                   </tbody>

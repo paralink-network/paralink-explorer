@@ -165,7 +165,7 @@
                       >
                         {{ shortAddress(JSON.parse(event.data)[0]) }}
                       </nuxt-link>
-                      <i class="fas fa-arrow-right"></i>
+                      <font-awesome-icon icon="arrow-right" />
                       <Identicon
                         :key="JSON.parse(event.data)[1]"
                         :value="JSON.parse(event.data)[1]"
@@ -178,7 +178,7 @@
                       >
                         {{ shortAddress(JSON.parse(event.data)[1]) }}
                       </nuxt-link>
-                      <i class="fas fa-arrow-right"></i>
+                      <font-awesome-icon icon="arrow-right" />
                       <span class="amount">
                         {{ formatAmount(JSON.parse(event.data)[2]) }}
                       </span>

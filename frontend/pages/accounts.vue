@@ -60,7 +60,7 @@
             class="download-csv mb-2"
             name="paralink_accounts.csv"
           >
-            <i class="fas fa-file-csv"></i>
+            <font-awesome-icon icon="file-csv" />
             {{ $t('pages.accounts.download_csv') }}
           </JsonCSV>
           <!-- Table with sorting and pagination-->
