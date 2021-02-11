@@ -184,7 +184,7 @@
                   </tbody>
                 </table>
               </div>
-              <!-- <b-tabs class="mt-4" content-class="mt-4" fill>
+              <b-tabs class="mt-4" content-class="mt-4" fill>
                 <b-tab active>
                   <template #title>
                     <h5>Sent transfers</h5>
@@ -197,19 +197,7 @@
                   </template>
                   <ReceivedTransfers :account-id="accountId" />
                 </b-tab>
-                <b-tab>
-                  <template #title>
-                    <h5>Rewards</h5>
-                  </template>
-                  <Rewards :account-id="accountId" />
-                </b-tab>
-                <b-tab>
-                  <template #title>
-                    <h5>Slashes</h5>
-                  </template>
-                  <Slashes :account-id="accountId" />
-                </b-tab>
-              </b-tabs> -->
+              </b-tabs>
             </div>
           </div>
         </template>
@@ -218,12 +206,11 @@
   </div>
 </template>
 <script>
-// import BN from 'bn.js'
 import gql from 'graphql-tag'
 import Identicon from '@/components/Identicon.vue'
 import Loading from '@/components/Loading.vue'
-// import SentTransfers from '@/components/SentTransfers.vue'
-// import ReceivedTransfers from '@/components/ReceivedTransfers.vue'
+import SentTransfers from '@/components/SentTransfers.vue'
+import ReceivedTransfers from '@/components/ReceivedTransfers.vue'
 import commonMixin from '@/mixins/commonMixin.js'
 import { network } from '@/frontend.config.js'
 
@@ -231,8 +218,8 @@ export default {
   components: {
     Identicon,
     Loading,
-    // SentTransfers,
-    // ReceivedTransfers,
+    SentTransfers,
+    ReceivedTransfers,
   },
   mixins: [commonMixin],
   data() {

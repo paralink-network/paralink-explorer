@@ -10,6 +10,8 @@
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav class="ml-auto">
           <b-nav-item right to="/blocks">Blocks</b-nav-item>
+          <b-nav-item right to="/extrinsics">Extrinsics</b-nav-item>
+          <b-nav-item right to="/events">Events</b-nav-item>
           <b-nav-item right to="/accounts">Accounts</b-nav-item>
         </b-navbar-nav>
       </b-collapse>
