@@ -30,7 +30,9 @@
                       :to="`/extrinsic/${data.item.block_number}/${data.item.extrinsic_index}`"
                       title="Check extrinsic information"
                     >
-                      {{ data.item.block_number }}-{{ data.item.extrinsic_index }}
+                      {{ data.item.block_number }}-{{
+                        data.item.extrinsic_index
+                      }}
                     </nuxt-link>
                   </p>
                 </template>
@@ -45,16 +47,16 @@
                 </template>
                 <template #cell(success)="data">
                   <p class="mb-0">
-                    <i
+                    <font-awesome-icon
+                      icon="check-circle"
                       v-if="data.item.success"
-                      class="fa fa-check-circle text-success"
-                      aria-hidden="true"
-                    ></i>
-                    <i
+                      class="text-success"
+                    />
+                    <font-awesome-icon
                       v-else
-                      class="fa fa-check-circle text-danger"
-                      aria-hidden="true"
-                    ></i>
+                      icon="check-circle"
+                      class="text-danger"
+                    />
                   </p>
                 </template>
               </b-table>

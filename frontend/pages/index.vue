@@ -20,13 +20,13 @@
             <h3>
               <nuxt-link
                 v-b-tooltip.hover
-                :to="`/activity`"
-                title="Click to see last activity"
+                :to="`/transfers`"
+                title="Click to see last transfers"
               >
-                Last activity
+                Last transfers
               </nuxt-link>
             </h3>
-            <LastActivity />
+            <LastTransfers />
           </div>
         </div>
         <div class="row">
@@ -61,7 +61,7 @@
 </template>
 <script>
 import LastBlocks from '@/components/LastBlocks.vue'
-import LastActivity from '@/components/LastActivity.vue'
+import LastTransfers from '@/components/LastTransfers.vue'
 import LastExtrinsics from '@/components/LastExtrinsics.vue'
 import LastEvents from '@/components/LastEvents.vue'
 import Chain from '@/components/Chain.vue'
@@ -71,7 +71,7 @@ import { network } from '@/frontend.config.js'
 export default {
   components: {
     LastBlocks,
-    LastActivity,
+    LastTransfers,
     LastExtrinsics,
     LastEvents,
     Chain,

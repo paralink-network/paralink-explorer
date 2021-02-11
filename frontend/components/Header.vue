@@ -10,10 +10,23 @@
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav class="ml-auto">
           <b-nav-item right to="/blocks">Blocks</b-nav-item>
+          <b-nav-item right to="/transfers">Transfers</b-nav-item>
           <b-nav-item right to="/extrinsics">Extrinsics</b-nav-item>
           <b-nav-item right to="/events">Events</b-nav-item>
           <b-nav-item right to="/accounts">Accounts</b-nav-item>
         </b-navbar-nav>
+        <a
+          v-b-tooltip.hover
+          title="Paralink Aura Testnet"
+          href="https://blog.paralink.network/paralink-developer-testnet/"
+          target="_blank"
+          class="d-none d-lg-block d-xl-block"
+        >
+          <span class="badge badge-pill badge-primary2 network">
+            <font-awesome-icon icon="plug" />
+            Aura testnet
+          </span>
+        </a>
       </b-collapse>
     </b-container>
   </b-navbar>
