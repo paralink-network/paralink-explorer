@@ -1,5 +1,5 @@
 <template>
-  <div v-if="lastBlock">
+  <div v-if="lastBlock" class="chain-info mb-4">
     <div class="row">
       <div class="col-6 col-md-6 col-lg-3 mb-4">
         <div class="card h-100">
@@ -38,7 +38,7 @@
       <div class="col-6 col-md-6 col-lg-3 mb-4">
         <div class="card h-100">
           <div class="card-body">
-            <h4 class="mb-3">Extrinsics</h4>
+            <h4 class="mb-3">Total Extrinsics</h4>
             <nuxt-link
               v-b-tooltip.hover
               to="/extrinsics"
@@ -54,7 +54,7 @@
       <div class="col-6 col-md-6 col-lg-3 mb-4">
         <div class="card h-100">
           <div class="card-body">
-            <h4 class="mb-3">Events</h4>
+            <h4 class="mb-3">Total Events</h4>
             <nuxt-link
               v-b-tooltip.hover
               to="/events"
@@ -139,17 +139,8 @@ export default {
 }
 </script>
 
-<style scoped>
-.network .card h5 {
-  color: #670d35;
-}
-.network .card .card-body {
-  padding: 1rem 0.5rem;
-}
-.network .identicon {
-  display: inline-block;
-  margin: 0 0.2rem 0 0;
-  cursor: copy;
-  height: 25px;
+<style>
+.chain-info .card {
+  box-shadow: 0 8px 20px 0 rgb(40 133 208 / 15%);
 }
 </style>
