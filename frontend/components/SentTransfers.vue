@@ -63,7 +63,7 @@
             <p class="mb-0">
               <nuxt-link
                 :to="`/account/${data.item.from}`"
-                :title="$t('pages.validators.validator_details')"
+                :title="$t('pages.accounts.account_details')"
               >
                 <Identicon
                   :key="data.item.from"
@@ -78,7 +78,7 @@
             <p class="mb-0">
               <nuxt-link
                 :to="`/account/${data.item.to}`"
-                :title="$t('pages.validators.validator_details')"
+                :title="$t('pages.accounts.account_details')"
               >
                 <Identicon
                   :key="data.item.to"
