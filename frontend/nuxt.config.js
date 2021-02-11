@@ -56,6 +56,8 @@ export default {
     '@nuxtjs/fontawesome',
     // https://www.npmjs.com/package/nuxt-clipboard2
     'nuxt-clipboard2',
+    // https://www.npmjs.com/package/cookie-universal-nuxt
+    ['cookie-universal-nuxt', { alias: 'cookies' }],
   ],
 
   // Module configurations

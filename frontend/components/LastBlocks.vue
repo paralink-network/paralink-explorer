@@ -15,10 +15,10 @@
         </template>
         <template #cell(finalized)="data">
           <p v-if="data.item.finalized" class="mb-0">
-            <font-awesome-icon icon="check" class="text-success" />
+            <some-icon icon="check" class="text-success" />
           </p>
           <p v-else class="mb-0">
-            <font-awesome-icon icon="clock" class="text-light" />
+            <some-icon icon="clock" class="text-light" />
           </p>
         </template>
         <template #cell(block_hash)="data">
