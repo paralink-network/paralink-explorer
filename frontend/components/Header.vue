@@ -3,7 +3,7 @@
     <b-container class="px-sm-3">
       <b-navbar-brand>
         <nuxt-link to="/" class="navbar-brand" title="Paralink block explorer">
-          <img class="logo" src="/img/paralink-logo.png" />
+          <img class="logo" src="/img/paralink-explorer-logo.png" />
         </nuxt-link>
       </b-navbar-brand>
       <b-navbar-toggle target="nav-collapse" />
