@@ -130,6 +130,10 @@ pre {
 .identicon {
   cursor: pointer;
 }
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+  color: #2885d0;
+  font-weight: 600;
+}
 
 // footer
 .footer .logo {
@@ -239,6 +243,11 @@ pre {
   background-color: #35424e;
 }
 
+.chain-info h4 {
+  color: $body-color;
+  font-weight: 100;
+}
+
 // network
 .network {
   font-size: 0.9rem;
@@ -255,6 +264,10 @@ pre {
 .dashboard .identicon {
   margin-right: 0.2rem;
   cursor: copy;
+}
+.dashboard h3, .dashboard .h3 {
+  font-size: 1.2rem;
+  text-transform: uppercase;
 }
 
 // blocks page
