@@ -48,8 +48,8 @@
                 <template #cell(success)="data">
                   <p class="mb-0">
                     <font-awesome-icon
-                      icon="check-circle"
                       v-if="data.item.success"
+                      icon="check-circle"
                       class="text-success"
                     />
                     <font-awesome-icon

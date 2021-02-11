@@ -100,7 +100,7 @@ export default {
               order_by: { block_number: desc }
               where: {
                 section: { _eq: "balances" }
-                method: { _eq: "transfer" }
+                method: { _like: "transfer%" }
               }
               limit: 10
             ) {

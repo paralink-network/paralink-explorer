@@ -10,9 +10,9 @@
         </template>
         <template v-else>
           <Block
-            :parsedBlock="parsedBlock"
-            :parsedExtrinsics="parsedExtrinsics"
-            :parsedEvents="parsedEvents"
+            :parsed-block="parsedBlock"
+            :parsed-extrinsics="parsedExtrinsics"
+            :parsed-events="parsedEvents"
           />
         </template>
       </b-container>

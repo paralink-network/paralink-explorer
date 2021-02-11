@@ -67,9 +67,8 @@
               >
                 <Identicon
                   :key="data.item.from"
-                  :value="data.item.from"
+                  :address="data.item.from"
                   :size="20"
-                  :theme="'polkadot'"
                 />
                 {{ shortAddress(data.item.from) }}
               </nuxt-link>
@@ -83,9 +82,8 @@
               >
                 <Identicon
                   :key="data.item.to"
-                  :value="data.item.to"
+                  :address="data.item.to"
                   :size="20"
-                  :theme="'polkadot'"
                 />
                 {{ shortAddress(data.item.to) }}
               </nuxt-link>
@@ -98,16 +96,16 @@
           </template>
           <template #cell(success)="data">
             <p class="mb-0">
-              <i
+              <font-awesome-icon
                 v-if="data.item.success"
-                class="fa fa-check-circle text-success"
-                aria-hidden="true"
-              ></i>
-              <i
+                icon="check-circle"
+                class="text-success"
+              />
+              <font-awesome-icon
                 v-else
-                class="fa fa-check-circle text-danger"
-                aria-hidden="true"
-              ></i>
+                icon="check-circle"
+                class="text-danger"
+              />
             </p>
           </template>
         </b-table>
@@ -222,7 +220,7 @@ export default {
               order_by: { block_number: desc }
               where: {
                 section: { _eq: "balances" }
-                method: { _eq: "transfer" }
+                method: { _like: "transfer%" }
                 args: { _like: $signer }
               }
             ) {

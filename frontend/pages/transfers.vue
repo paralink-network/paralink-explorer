@@ -56,9 +56,8 @@
                     >
                       <Identicon
                         :key="data.item.from"
-                        :value="data.item.from"
+                        :address="data.item.from"
                         :size="20"
-                        :theme="'polkadot'"
                       />
                       {{ shortAddress(data.item.from) }}
                     </nuxt-link>
@@ -72,9 +71,8 @@
                     >
                       <Identicon
                         :key="data.item.to"
-                        :value="data.item.to"
+                        :address="data.item.to"
                         :size="20"
-                        :theme="'polkadot'"
                       />
                       {{ shortAddress(data.item.to) }}
                     </nuxt-link>
@@ -216,7 +214,7 @@ export default {
             extrinsic(
               where: {
                 section: { _eq: "balances" }
-                method: { _eq: "transfer" }
+                method: { _like: "transfer%" }
               }
               order_by: { block_number: desc, extrinsic_index: desc }
             ) {

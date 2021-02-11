@@ -76,8 +76,8 @@
                       <td>Success</td>
                       <td class="text-right">
                         <font-awesome-icon
-                          icon="check-circle"
                           v-if="parsedExtrinsic.success"
+                          icon="check-circle"
                           class="text-success"
                         />
                         <font-awesome-icon

@@ -19,7 +19,6 @@
               :key="data.item.signer"
               :address="data.item.signer"
               :size="20"
-              :theme="'substrate'"
             />
             <nuxt-link
               v-b-tooltip.hover
