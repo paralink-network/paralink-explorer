@@ -37,12 +37,12 @@ export default {
   },
   methods: {
     showToast() {
-      // this.$bvToast.toast(this.address, {
-      //   title: 'Address copied to clipboard!',
-      //   variant: 'secondary',
-      //   autoHideDelay: 5000,
-      //   appendToast: false,
-      // })
+      this.$bvToast.toast(this.address, {
+        title: 'Address copied to clipboard!',
+        variant: 'success',
+        autoHideDelay: 5000,
+        appendToast: false,
+      })
     },
   },
 }

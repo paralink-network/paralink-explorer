@@ -86,8 +86,9 @@
                   >
                     <td>
                       <nuxt-link
+                        v-b-tooltip.hover
                         :to="`/extrinsic/${extrinsic.block_number}/${extrinsic.extrinsic_index}`"
-                        :title="$t('details.block.account_details')"
+                        :title="$t('details.extrinsic.extrinsic_details')"
                       >
                         {{ extrinsic.block_number }}-{{
                           extrinsic.extrinsic_index
@@ -103,6 +104,7 @@
                           :size="20"
                         />
                         <nuxt-link
+                          v-b-tooltip.hover
                           :to="`/account/${extrinsic.signer}`"
                           :title="$t('details.block.account_details')"
                         >
@@ -164,6 +166,7 @@
                           :size="20"
                         />
                         <nuxt-link
+                          v-b-tooltip.hover
                           :to="`/account/${JSON.parse(event.data)[0]}`"
                           :title="$t('details.block.account_details')"
                         >
@@ -176,6 +179,7 @@
                           :size="20"
                         />
                         <nuxt-link
+                          v-b-tooltip.hover
                           :to="`/account/${JSON.parse(event.data)[1]}`"
                           :title="$t('details.block.account_details')"
                         >

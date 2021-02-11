@@ -168,41 +168,17 @@
     },
     "blocks": {
       "title": "Bloques",
-      "head_title": "PolkaStats - Bloques de {networkName}",
-      "head_content": "Bloques de {networkName}",
       "search_placeholder": "Buscar por número de bloque"
     },
-    "block": {
-      "head_title": "PolkaStats - {networkName} bloque {blockNumber}",
-      "head_content": "{networkName} bloque {blockNumber}"
-    },
     "extrinsics": {
-      "title": "Extrinsics",
-      "head_title": "PolkaStats - Extrinsics en {networkName}",
-      "head_content": "Extrinsics en {networkName}"
-    },
-    "extrinsic": {
-      "head_title": "PolkaStats - {networkName} extrinsic {extrinsicHash}",
-      "head_content": "{networkName} extrinsic {extrinsicHash}"
+      "title": "Extrinsics"
     },
     "transfers": {
-      "title": "Transferencias",
-      "head_title": "PolkaStats - Transferencias en {networkName}",
-      "head_content": "Transferencias en {networkName}"
-    },
-    "transfer": {
-      "head_title": "PolkaStats - Transferencia de {networkName} hash {extrinsicHash}",
-      "head_content": "Transferencia de {networkName} hash {extrinsicHash}"
+      "title": "Transferencias"
     },
     "events": {
       "title": "Eventos",
-      "head_title": "PolkaStats - Eventos en {networkName}",
-      "head_content": "Eventos en {networkName}",
       "search_placeholder": "Buscar por número de bloque"
-    },
-    "event": {
-      "head_title": "PolkaStats - {networkName} evento de sistema {systemEvent}",
-      "head_content": "{networkName} evento de sistema {systemEvent}"
     }
   },
   "details": {
@@ -254,5 +230,8 @@
       "engine": "Motor",
       "total_issuance": "Emisión total"
     }
+  },
+  "extrinsic": {
+    "extrinsic_details": "Detalles del extrinsic"
   }
 }

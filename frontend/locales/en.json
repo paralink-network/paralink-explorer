@@ -168,41 +168,17 @@
     },
     "blocks": {
       "title": "Blocks",
-      "head_title": "PolkaStats - {networkName} blocks",
-      "head_content": "{networkName} blocks",
       "search_placeholder": "Search by block number"
     },
-    "block": {
-      "head_title": "PolkaStats - {networkName} block {blockNumber}",
-      "head_content": "{networkName} block {blockNumber}"
-    },
     "extrinsics": {
-      "title": "Extrinsics",
-      "head_title": "PolkaStats - {networkName} extrinsics",
-      "head_content": "{networkName} extrinsics"
-    },
-    "extrinsic": {
-      "head_title": "PolkaStats - {networkName} extrinsic {extrinsicHash}",
-      "head_content": "{networkName} extrinsic {extrinsicHash}"
+      "title": "Extrinsics"
     },
     "transfers": {
-      "title": "Transfers",
-      "head_title": "PolkaStats - {networkName} transfers",
-      "head_content": "{networkName} transfers"
-    },
-    "transfer": {
-      "head_title": "PolkaStats - {networkName} transfer {extrinsicHash}",
-      "head_content": "{networkName} transfer {extrinsicHash}"
+      "title": "Transfers"
     },
     "events": {
       "title": "Events",
-      "head_title": "PolkaStats - {networkName} events",
-      "head_content": "{networkName} events",
       "search_placeholder": "Search by block number"
-    },
-    "event": {
-      "head_title": "PolkaStats - {networkName} event {systemEvent}",
-      "head_content": "{networkName} event {systemEvent}"
     }
   },
   "details": {
@@ -254,6 +230,9 @@
       "index": "Index",
       "engine": "Engine",
       "total_issuance": "Total issuance"
+    },
+    "extrinsic": {
+      "extrinsic_details": "Extrinsic details"
     }
   }
 }
