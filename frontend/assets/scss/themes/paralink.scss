@@ -112,9 +112,6 @@ body {
 .hr {
   color: gray;
 }
-// .footer a {
-//   color: $body-color;
-// }
 .toast-body {
   word-break: break-all;
 }
@@ -130,7 +127,9 @@ pre {
   text-transform: uppercase;
   font-size: 14px;
 }
-
+.identicon {
+  cursor: pointer;
+}
 
 // footer
 .footer .logo {
