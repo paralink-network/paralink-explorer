@@ -153,20 +153,6 @@
                   </nuxt-link>
                 </div>
               </template>
-              <template #cell(identity_display)="data">
-                <span
-                  v-if="
-                    data.item.identity_display_parent &&
-                    data.item.identity_display
-                  "
-                >
-                  {{ data.item.identity_display_parent }} /
-                  {{ data.item.identity_display }}
-                </span>
-                <span v-else>
-                  {{ data.item.identity_display }}
-                </span>
-              </template>
               <template #cell(free_balance)="data">
                 <p class="text-right mb-0">
                   {{ formatAmount(data.item.free_balance) }}
@@ -265,12 +251,6 @@ export default {
           class: `d-none d-sm-none d-md-table-cell d-lg-table-cell d-xl-table-cell`,
         },
         { key: 'account_id', label: 'Account', sortable: true },
-        {
-          key: 'identity_display',
-          label: this.$t('pages.accounts.identity'),
-          sortable: true,
-          class: `d-none d-sm-none d-md-table-cell d-lg-table-cell d-xl-table-cell`,
-        },
         {
           key: 'free_balance',
           label: this.$t('pages.accounts.free_balance'),
