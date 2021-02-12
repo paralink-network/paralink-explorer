@@ -295,18 +295,20 @@ export default {
         }
       },
       result({ data }) {
-        this.parsedAccount = {
-          accountId: data.account[0].account_id,
-          availableBalance: data.account[0].available_balance,
-          freeBalance: data.account[0].free_balance,
-          lockedBalance: data.account[0].locked_balance,
-          balances: JSON.parse(data.account[0].balances),
-          nonce: data.account[0].nonce,
-          identity:
-            data.account[0].identity !== ``
-              ? JSON.parse(data.account[0].identity)
-              : {},
-          timestamp: data.account[0].timestamp,
+        if (data.account[0]) {
+          this.parsedAccount = {
+            accountId: data.account[0].account_id,
+            availableBalance: data.account[0].available_balance,
+            freeBalance: data.account[0].free_balance,
+            lockedBalance: data.account[0].locked_balance,
+            balances: JSON.parse(data.account[0].balances),
+            nonce: data.account[0].nonce,
+            identity:
+              data.account[0].identity !== ``
+                ? JSON.parse(data.account[0].identity)
+                : {},
+            timestamp: data.account[0].timestamp,
+          }
         }
         this.loading = false
       },

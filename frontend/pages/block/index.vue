@@ -84,8 +84,8 @@ export default {
         result({ data }) {
           if (data.block[0]) {
             this.parsedBlock = data.block[0]
-            this.loading = false
           }
+          this.loading = false
         },
       },
       event: {

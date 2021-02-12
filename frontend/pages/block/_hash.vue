@@ -86,8 +86,8 @@ export default {
           if (data.block[0]) {
             this.blockNumber = data.block[0].block_number
             this.parsedBlock = data.block[0]
-            this.loading = false
           }
+          this.loading = false
         },
       },
       event: {
