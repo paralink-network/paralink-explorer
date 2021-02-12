@@ -126,7 +126,7 @@
                     <tr>
                       <td>{{ $t('details.account.account_nonce') }}</td>
                       <td class="text-right">
-                        {{ parsedAccount.balances.accountNonce }}
+                        {{ parsedAccount.nonce }}
                       </td>
                     </tr>
                     <tr>
@@ -282,6 +282,7 @@ export default {
             available_balance
             free_balance
             locked_balance
+            nonce
             block_height
             identity
             timestamp
@@ -300,7 +301,7 @@ export default {
           freeBalance: data.account[0].free_balance,
           lockedBalance: data.account[0].locked_balance,
           balances: JSON.parse(data.account[0].balances),
-          blockHeight: data.account[0].block_height,
+          nonce: data.account[0].nonce,
           identity:
             data.account[0].identity !== ``
               ? JSON.parse(data.account[0].identity)
