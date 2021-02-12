@@ -192,22 +192,50 @@
                 </p>
               </template>
             </b-table>
-            <div style="display: flex">
+          </div>
+          <!-- pagination -->
+          <div class="row">
+            <div class="col-6">
+              <!-- desktop -->
+              <div class="d-none d-sm-none d-md-none d-lg-block d-xl-block">
+                <b-button-group>
+                  <b-button
+                    v-for="(option, index) in paginationOptions"
+                    :key="index"
+                    :class="{ 'selected-per-page': perPage === option }"
+                    variant="outline-secondary"
+                    @click="setPageSize(option)"
+                  >
+                    {{ option }}
+                  </b-button>
+                </b-button-group>
+              </div>
+              <!-- mobile -->
+              <div class="d-block d-sm-block d-md-block d-lg-none d-xl-none">
+                <b-dropdown
+                  class="m-md-2"
+                  text="Page size"
+                  variant="outline-secondary"
+                >
+                  <b-dropdown-item
+                    v-for="(option, index) in paginationOptions"
+                    :key="index"
+                    @click="setPageSize(10)"
+                  >
+                    {{ option }}
+                  </b-dropdown-item>
+                </b-dropdown>
+              </div>
+            </div>
+            <div class="col-6">
               <b-pagination
                 v-model="currentPage"
                 :total-rows="totalRows"
                 :per-page="perPage"
-                aria-controls="validators-table"
-              />
-              <b-button-group class="mx-4">
-                <b-button
-                  v-for="(item, index) in tableOptions"
-                  :key="index"
-                  @click="handleNumFields(item)"
-                >
-                  {{ item }}
-                </b-button>
-              </b-button-group>
+                aria-controls="my-table"
+                variant="dark"
+                align="right"
+              ></b-pagination>
             </div>
           </div>
         </template>
@@ -233,7 +261,7 @@ export default {
   data() {
     return {
       loading: true,
-      tableOptions: paginationOptions,
+      paginationOptions,
       perPage: localStorage.paginationOptions
         ? parseInt(localStorage.paginationOptions)
         : 10,
@@ -334,7 +362,8 @@ export default {
     clearInterval(this.polling)
   },
   methods: {
-    handleNumFields(num) {
+    setPageSize(num) {
+      localStorage.paginationOptions = num
       this.perPage = parseInt(num)
     },
     toggleFavorite(accountId) {
