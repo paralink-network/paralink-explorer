@@ -58,7 +58,6 @@ export default {
           }
         `
         const response = await client.query({ query })
-        console.log('isBlockHash:', response.data.block.length > 0)
         return response.data.block.length > 0
       }
       return false
@@ -75,7 +74,6 @@ export default {
           }
         `
         const response = await client.query({ query })
-        console.log('isExtrinsicHash:', response.data.extrinsic.length > 0)
         return response.data.extrinsic.length > 0
       }
       return false

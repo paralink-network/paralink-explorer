@@ -171,8 +171,6 @@ export default {
         }
       },
       result({ data }) {
-        console.log(data)
-        console.log(this.blockHash)
         this.parsedExtrinsic = data.extrinsic[0]
         this.loading = false
       },
