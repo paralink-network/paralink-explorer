@@ -2,9 +2,18 @@
   <div>
     <section>
       <b-container class="page-accounts main py-5">
-        <h1 class="mb-4">
-          {{ $t('pages.accounts.active_accounts') }}
-        </h1>
+        <b-row class="mb-2">
+          <b-col cols="8">
+            <h1>
+              {{ $t('pages.accounts.active_accounts') }}
+            </h1>
+          </b-col>
+          <b-col cols="4">
+            <p v-if="totalRows !== 1" class="mt-3 mb-0 text-right">
+              {{ formatNumber(totalRows) }}
+            </p>
+          </b-col>
+        </b-row>
         <div v-if="loading" class="text-center py-4">
           <Loading />
         </div>
@@ -58,7 +67,7 @@
           <JsonCSV
             :data="accountsJSON"
             class="download-csv mb-2"
-            name="paralink_accounts.csv"
+            name="subsocial_accounts.csv"
           >
             <font-awesome-icon icon="file-csv" />
             {{ $t('pages.accounts.download_csv') }}
@@ -309,19 +318,6 @@ export default {
       polling: null,
     }
   },
-  head() {
-    return {
-      title: 'Explorer | Paralink Network',
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content:
-            'Paralink block explorer. Paralink is a multi-chain oracle platform for DeFi applications',
-        },
-      ],
-    }
-  },
   computed: {
     parsedAccounts() {
       return this.accounts.map((account, index) => {
@@ -400,9 +396,7 @@ export default {
         `,
         result({ data }) {
           this.accounts = data.account
-          if (this.filter) {
-            this.totalRows = this.accounts.length
-          }
+          this.totalRows = this.accounts.length
           this.loading = false
         },
       },

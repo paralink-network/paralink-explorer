@@ -3,12 +3,12 @@
     <div v-if="loading" class="text-center py-4">
       <Loading />
     </div>
-    <div v-else-if="transfers.length === 0" class="text-center py-4">
+    <div v-else-if="activities.length === 0" class="text-center py-4">
       <h5>{{ $t('components.transfers.no_transfer_found') }}</h5>
     </div>
     <div v-else>
       <!-- Filter -->
-      <b-row style="margin-bottom: 1rem">
+      <!-- <b-row style="margin-bottom: 1rem">
         <b-col cols="12">
           <b-form-input
             id="filterInput"
@@ -17,11 +17,11 @@
             :placeholder="$t('components.transfers.search')"
           />
         </b-col>
-      </b-row>
+      </b-row> -->
       <JsonCSV
-        :data="transfers"
+        :data="activities"
         class="download-csv mb-2"
-        :name="`polkastats.io_sent_transfers_${accountId}.csv`"
+        :name="`polkastats.io_subsocial_${accountId}_activity.csv`"
       >
         <font-awesome-icon icon="file-csv" />
         {{ $t('pages.accounts.download_csv') }}
@@ -33,7 +33,7 @@
           :fields="fields"
           :per-page="perPage"
           :current-page="currentPage"
-          :items="transfers"
+          :items="activities"
           :filter="filter"
           @filtered="onFiltered"
         >
@@ -59,39 +59,25 @@
               </nuxt-link>
             </p>
           </template>
-          <template #cell(from)="data">
+          <template #cell(signer)="data">
             <p class="mb-0">
               <nuxt-link
                 :to="`/account/${data.item.from}`"
                 :title="$t('pages.accounts.account_details')"
               >
                 <Identicon
-                  :key="data.item.from"
-                  :address="data.item.from"
+                  :key="data.item.signer"
+                  :address="data.item.signer"
                   :size="20"
                 />
-                {{ shortAddress(data.item.from) }}
+                {{ shortAddress(data.item.signer) }}
               </nuxt-link>
             </p>
           </template>
-          <template #cell(to)="data">
+          <template #cell(section)="data">
             <p class="mb-0">
-              <nuxt-link
-                :to="`/account/${data.item.to}`"
-                :title="$t('pages.accounts.account_details')"
-              >
-                <Identicon
-                  :key="data.item.to"
-                  :address="data.item.to"
-                  :size="20"
-                />
-                {{ shortAddress(data.item.to) }}
-              </nuxt-link>
-            </p>
-          </template>
-          <template #cell(amount)="data">
-            <p class="mb-0">
-              {{ formatAmount(data.item.amount) }}
+              {{ data.item.section }} ➡
+              {{ data.item.method }}
             </p>
           </template>
           <template #cell(success)="data">
@@ -151,7 +137,7 @@ export default {
   data() {
     return {
       loading: true,
-      transfers: [],
+      activities: [],
       filter: null,
       filterOn: [],
       tableOptions: paginationOptions,
@@ -168,24 +154,18 @@ export default {
           sortable: true,
         },
         {
+          key: 'signer',
+          label: 'Signer',
+          sortable: true,
+        },
+        {
           key: 'hash',
           label: 'Hash',
-          class: 'd-none d-sm-none d-md-none d-lg-table-cell d-xl-table-cell',
           sortable: true,
         },
         {
-          key: 'from',
-          label: 'From',
-          sortable: true,
-        },
-        {
-          key: 'to',
-          label: 'To',
-          sortable: true,
-        },
-        {
-          key: 'amount',
-          label: 'Amount',
+          key: 'section',
+          label: 'Extrinsic',
           sortable: true,
         },
         {
@@ -217,15 +197,13 @@ export default {
           subscription extrinsic($signer: String!) {
             extrinsic(
               order_by: { block_number: desc }
-              where: {
-                section: { _eq: "balances" }
-                method: { _like: "transfer%" }
-                signer: { _eq: $signer }
-              }
+              where: { signer: { _eq: $signer } }
             ) {
               block_number
+              signer
               hash
-              args
+              section
+              method
               success
             }
           }
@@ -239,17 +217,8 @@ export default {
           return !this.accountId
         },
         result({ data }) {
-          this.transfers = data.extrinsic.map((transfer) => {
-            return {
-              block_number: transfer.block_number,
-              hash: transfer.hash,
-              from: this.accountId,
-              to: JSON.parse(transfer.args)[0],
-              amount: JSON.parse(transfer.args)[1],
-              success: transfer.success,
-            }
-          })
-          this.totalRows = this.transfers.length
+          this.activities = data.extrinsic
+          this.totalRows = this.activities.length
           this.loading = false
         },
       },
