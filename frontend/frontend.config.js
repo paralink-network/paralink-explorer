@@ -6,8 +6,8 @@ export const network = {
   ss58Format: 42,
   coinGeckoDenom: undefined,
   nodeWs: 'wss://rpc-testnet.paralink.network/ws',
-  backendWs: 'wss://paralink-dev.polkastats.io/api/v3',
-  backendHttp: 'https://paralink-dev.polkastats.io/api/v3',
+  backendWs: 'wss://explorer.paralink.network/api/v3',
+  backendHttp: 'https://explorer.paralink.network/api/v3',
   googleAnalytics: '',
   theme: '@/assets/scss/themes/paralink.scss',
 }
